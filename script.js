@@ -1,14 +1,25 @@
-const startBtn = document.getElementById("startBtn");
+# FULL FINAL CODE — script.js
 
-const introScreen = document.getElementById("introScreen");
+```javascript
+const startBtn =
+  document.getElementById("startBtn");
 
-const mainScreen = document.getElementById("mainScreen");
+const introScreen =
+  document.getElementById("introScreen");
 
-const successScreen = document.getElementById("successScreen");
+const mainScreen =
+  document.getElementById("mainScreen");
 
-const yesBtn = document.getElementById("yesBtn");
+const successScreen =
+  document.getElementById("successScreen");
 
-const noBtn = document.getElementById("noBtn");
+const yesBtn =
+  document.getElementById("yesBtn");
+
+const noBtn =
+  document.getElementById("noBtn");
+
+/* NO BUTTON TEXTS */
 
 const noTexts = [
   "No",
@@ -26,11 +37,7 @@ startBtn.addEventListener("click", () => {
 
   introScreen.classList.add("hidden");
 
-  setTimeout(() => {
-
-    mainScreen.classList.remove("hidden");
-
-  }, 600);
+  mainScreen.classList.remove("hidden");
 
 });
 
@@ -38,9 +45,9 @@ startBtn.addEventListener("click", () => {
 
 noBtn.addEventListener("mouseover", () => {
 
-  const x = Math.random() * 300 - 150;
+  const x = Math.random() * 250 - 125;
 
-  const y = Math.random() * 220 - 110;
+  const y = Math.random() * 200 - 100;
 
   noBtn.style.transform =
     `translate(${x}px, ${y}px)`;
@@ -62,11 +69,7 @@ yesBtn.addEventListener("click", () => {
 
   mainScreen.classList.add("hidden");
 
-  setTimeout(() => {
-
-    successScreen.classList.remove("hidden");
-
-  }, 700);
+  successScreen.classList.remove("hidden");
 
   confetti({
     particleCount:250,
@@ -77,3 +80,4 @@ yesBtn.addEventListener("click", () => {
   });
 
 });
+```
