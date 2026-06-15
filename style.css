@@ -1,4 +1,4 @@
- 
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 *{
@@ -8,10 +8,15 @@
 }
 
 body{
+
   font-family:'Poppins',sans-serif;
-  overflow:hidden;
-  height:100vh;
+
+  overflow-x:hidden;
+
+  min-height:100vh;
+
   background:#fff8f6;
+
   color:#2B2B2B;
 }
 
@@ -25,6 +30,8 @@ body{
     radial-gradient(circle at top left,#ffdce2 0%,transparent 25%),
     radial-gradient(circle at bottom right,#ffecef 0%,transparent 25%),
     linear-gradient(135deg,#fff8f6,#fff0f3);
+
+  z-index:-3;
 }
 
 .bg-glow{
@@ -32,6 +39,7 @@ body{
   border-radius:50%;
   filter:blur(140px);
   opacity:0.22;
+  z-index:-2;
 }
 
 .glow-1{
@@ -53,14 +61,16 @@ body{
 /* SECTIONS */
 
 section{
-  position:absolute;
-  inset:0;
+
+  min-height:100vh;
+
+  width:100%;
 
   display:flex;
   justify-content:center;
   align-items:center;
 
-  padding:20px;
+  padding:60px 20px;
 
   transition:1s ease;
 }
@@ -68,7 +78,7 @@ section{
 .hidden{
   opacity:0;
   pointer-events:none;
-  transform:scale(1.05);
+  position:absolute;
 }
 
 /* INTRO */
@@ -90,6 +100,7 @@ section{
   font-size:72px;
   line-height:1.1;
   margin-bottom:25px;
+  font-weight:700;
 }
 
 .intro-subtitle{
@@ -98,24 +109,50 @@ section{
   margin-bottom:45px;
 }
 
-#startBtn{
+/* BUTTON */
+
+#startBtn,
+#yesBtn,
+#noBtn{
+
   border:none;
-  background:#111;
-  color:white;
+  outline:none;
 
   padding:18px 42px;
 
   border-radius:999px;
 
-  font-size:18px;
+  font-size:17px;
+  font-weight:600;
 
   cursor:pointer;
 
-  transition:0.3s ease;
+  transition:0.35s ease;
 }
 
-#startBtn:hover{
-  transform:translateY(-3px) scale(1.05);
+#startBtn,
+#yesBtn{
+  background:#111;
+  color:white;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.12);
+}
+
+#startBtn:hover,
+#yesBtn:hover{
+  transform:translateY(-4px) scale(1.05);
+}
+
+#noBtn{
+  position:absolute;
+
+  margin-left:20px;
+
+  background:white;
+  color:#111;
+
+  border:1px solid rgba(0,0,0,0.08);
 }
 
 /* GLASS CARD */
@@ -163,44 +200,15 @@ h2{
   margin-bottom:55px;
 }
 
-/* BUTTONS */
+/* BUTTON GROUP */
 
 .button-group{
   position:relative;
   height:140px;
-}
 
-button{
-  border:none;
-  outline:none;
-
-  padding:18px 42px;
-
-  border-radius:999px;
-
-  font-size:17px;
-  font-weight:600;
-
-  cursor:pointer;
-
-  transition:0.35s ease;
-}
-
-#yesBtn{
-  background:#111;
-  color:white;
-}
-
-#yesBtn:hover{
-  transform:translateY(-4px) scale(1.05);
-}
-
-#noBtn{
-  position:absolute;
-  margin-left:20px;
-
-  background:white;
-  color:#111;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
 /* SUCCESS */
@@ -210,7 +218,7 @@ button{
   margin-bottom:25px;
 }
 
-/* DATE CARDS */
+/* DATE OPTIONS */
 
 .date-grid{
   display:grid;
@@ -233,6 +241,7 @@ button{
 }
 
 .date-card:hover{
+
   transform:translateY(-6px) scale(1.03);
 
   box-shadow:
@@ -264,6 +273,7 @@ button{
 /* ANIMATION */
 
 @keyframes fadeUp{
+
   from{
     opacity:0;
     transform:translateY(40px);
@@ -273,6 +283,7 @@ button{
     opacity:1;
     transform:translateY(0);
   }
+
 }
 
 /* MOBILE */
@@ -294,6 +305,11 @@ button{
 
   .date-grid{
     grid-template-columns:1fr;
+  }
+
+  .description,
+  .success-text{
+    font-size:17px;
   }
 
 }
