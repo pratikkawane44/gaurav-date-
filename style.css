@@ -1,4 +1,5 @@
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 *{
   margin:0;
@@ -63,14 +64,10 @@ section{
   align-items:center;
 
   padding:60px 20px;
-
-  transition:1s ease;
 }
 
 .hidden{
-  opacity:0;
-  pointer-events:none;
-  position:absolute;
+  display:none;
 }
 
 /* INTRO */
@@ -78,7 +75,6 @@ section{
 .intro-content{
   text-align:center;
   max-width:800px;
-  animation:fadeUp 1.2s ease;
 }
 
 .intro-small{
@@ -101,7 +97,45 @@ section{
   margin-bottom:45px;
 }
 
-/* GLASS CARD */
+/* BUTTONS */
+
+button{
+  border:none;
+  outline:none;
+
+  padding:18px 42px;
+
+  border-radius:999px;
+
+  font-size:17px;
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:0.35s ease;
+}
+
+#startBtn,
+#yesBtn{
+  background:#111;
+  color:white;
+}
+
+#startBtn:hover,
+#yesBtn:hover{
+  transform:translateY(-4px) scale(1.05);
+}
+
+#noBtn{
+  background:white;
+  color:#111;
+
+  border:1px solid rgba(0,0,0,0.08);
+
+  position:relative;
+}
+
+/* CARD */
 
 .glass-card,
 .success-card{
@@ -146,63 +180,17 @@ h2{
   margin-bottom:55px;
 }
 
-/* BUTTONS */
+/* BUTTON GROUP */
 
 .button-group{
-  position:relative;
-
   display:flex;
   justify-content:center;
   align-items:center;
-
   gap:25px;
 
   min-height:120px;
 
   flex-wrap:wrap;
-}
-
-button{
-  border:none;
-  outline:none;
-
-  padding:18px 42px;
-
-  border-radius:999px;
-
-  font-size:17px;
-  font-weight:600;
-
-  cursor:pointer;
-
-  transition:0.35s ease;
-}
-
-/* START + YES */
-
-#startBtn,
-#yesBtn{
-  background:#111;
-  color:white;
-
-  box-shadow:
-    0 10px 30px rgba(0,0,0,0.12);
-}
-
-#startBtn:hover,
-#yesBtn:hover{
-  transform:translateY(-4px) scale(1.05);
-}
-
-/* NO BUTTON */
-
-#noBtn{
-  background:white;
-  color:#111;
-
-  border:1px solid rgba(0,0,0,0.08);
-
-  position:relative;
 }
 
 /* SUCCESS */
@@ -264,22 +252,6 @@ button{
   color:#555;
 }
 
-/* ANIMATION */
-
-@keyframes fadeUp{
-
-  from{
-    opacity:0;
-    transform:translateY(40px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-
-}
-
 /* MOBILE */
 
 @media(max-width:768px){
@@ -299,15 +271,6 @@ button{
 
   .date-grid{
     grid-template-columns:1fr;
-  }
-
-  .description,
-  .success-text{
-    font-size:17px;
-  }
-
-  button{
-    width:100%;
   }
 
 }
