@@ -1,25 +1,34 @@
-# FULL FINAL CODE — script.js
 
-```javascript
+
 const startBtn =
-  document.getElementById("startBtn");
+document.getElementById("startBtn");
 
 const introScreen =
-  document.getElementById("introScreen");
+document.getElementById("introScreen");
 
 const mainScreen =
-  document.getElementById("mainScreen");
+document.getElementById("mainScreen");
 
 const successScreen =
-  document.getElementById("successScreen");
+document.getElementById("successScreen");
 
 const yesBtn =
-  document.getElementById("yesBtn");
+document.getElementById("yesBtn");
 
 const noBtn =
-  document.getElementById("noBtn");
+document.getElementById("noBtn");
 
-/* NO BUTTON TEXTS */
+/* =========================
+   INITIAL STATE
+========================= */
+
+mainScreen.style.display = "none";
+
+successScreen.style.display = "none";
+
+/* =========================
+   NO BUTTON TEXTS
+========================= */
 
 const noTexts = [
   "No",
@@ -31,23 +40,29 @@ const noTexts = [
 
 let index = 0;
 
-/* CONTINUE BUTTON */
+/* =========================
+   CONTINUE BUTTON
+========================= */
 
-startBtn.addEventListener("click", () => {
+startBtn.onclick = function(){
 
-  introScreen.classList.add("hidden");
+  introScreen.style.display = "none";
 
-  mainScreen.classList.remove("hidden");
+  mainScreen.style.display = "flex";
 
-});
+};
 
-/* RUNNING NO BUTTON */
+/* =========================
+   RUNNING NO BUTTON
+========================= */
 
-noBtn.addEventListener("mouseover", () => {
+noBtn.onmouseover = function(){
 
-  const x = Math.random() * 250 - 125;
+  const x =
+    Math.random() * 250 - 125;
 
-  const y = Math.random() * 200 - 100;
+  const y =
+    Math.random() * 200 - 100;
 
   noBtn.style.transform =
     `translate(${x}px, ${y}px)`;
@@ -61,23 +76,29 @@ noBtn.addEventListener("mouseover", () => {
 
   }
 
-});
+};
 
-/* YES BUTTON */
+/* =========================
+   YES BUTTON
+========================= */
 
-yesBtn.addEventListener("click", () => {
+yesBtn.onclick = function(){
 
-  mainScreen.classList.add("hidden");
+  mainScreen.style.display = "none";
 
-  successScreen.classList.remove("hidden");
+  successScreen.style.display = "flex";
 
   confetti({
+
     particleCount:250,
+
     spread:120,
+
     origin:{
       y:0.6
     }
+
   });
 
-});
+};
 ```
