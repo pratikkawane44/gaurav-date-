@@ -1,21 +1,14 @@
- 
-const startBtn =
-  document.getElementById("startBtn");
+const startBtn = document.getElementById("startBtn");
 
-const introScreen =
-  document.getElementById("introScreen");
+const introScreen = document.getElementById("introScreen");
 
-const mainScreen =
-  document.getElementById("mainScreen");
+const mainScreen = document.getElementById("mainScreen");
 
-const successScreen =
-  document.getElementById("successScreen");
+const successScreen = document.getElementById("successScreen");
 
-const yesBtn =
-  document.getElementById("yesBtn");
+const yesBtn = document.getElementById("yesBtn");
 
-const noBtn =
-  document.getElementById("noBtn");
+const noBtn = document.getElementById("noBtn");
 
 const noTexts = [
   "No",
@@ -27,7 +20,7 @@ const noTexts = [
 
 let index = 0;
 
-/* START WEBSITE */
+/* CONTINUE BUTTON */
 
 startBtn.addEventListener("click", () => {
 
@@ -63,7 +56,7 @@ noBtn.addEventListener("mouseover", () => {
 
 });
 
-/* YES CLICK */
+/* YES BUTTON */
 
 yesBtn.addEventListener("click", () => {
 
@@ -84,4 +77,3 @@ yesBtn.addEventListener("click", () => {
   });
 
 });
-```
