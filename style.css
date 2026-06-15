@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 *{
   margin:0;
@@ -8,15 +7,10 @@
 }
 
 body{
-
   font-family:'Poppins',sans-serif;
-
   overflow-x:hidden;
-
   min-height:100vh;
-
   background:#fff8f6;
-
   color:#2B2B2B;
 }
 
@@ -61,9 +55,7 @@ body{
 /* SECTIONS */
 
 section{
-
   min-height:100vh;
-
   width:100%;
 
   display:flex;
@@ -107,52 +99,6 @@ section{
   font-size:28px;
   color:#555;
   margin-bottom:45px;
-}
-
-/* BUTTON */
-
-#startBtn,
-#yesBtn,
-#noBtn{
-
-  border:none;
-  outline:none;
-
-  padding:18px 42px;
-
-  border-radius:999px;
-
-  font-size:17px;
-  font-weight:600;
-
-  cursor:pointer;
-
-  transition:0.35s ease;
-}
-
-#startBtn,
-#yesBtn{
-  background:#111;
-  color:white;
-
-  box-shadow:
-    0 10px 30px rgba(0,0,0,0.12);
-}
-
-#startBtn:hover,
-#yesBtn:hover{
-  transform:translateY(-4px) scale(1.05);
-}
-
-#noBtn{
-  position:absolute;
-
-  margin-left:20px;
-
-  background:white;
-  color:#111;
-
-  border:1px solid rgba(0,0,0,0.08);
 }
 
 /* GLASS CARD */
@@ -200,15 +146,63 @@ h2{
   margin-bottom:55px;
 }
 
-/* BUTTON GROUP */
+/* BUTTONS */
 
 .button-group{
   position:relative;
-  height:140px;
 
   display:flex;
   justify-content:center;
   align-items:center;
+
+  gap:25px;
+
+  min-height:120px;
+
+  flex-wrap:wrap;
+}
+
+button{
+  border:none;
+  outline:none;
+
+  padding:18px 42px;
+
+  border-radius:999px;
+
+  font-size:17px;
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:0.35s ease;
+}
+
+/* START + YES */
+
+#startBtn,
+#yesBtn{
+  background:#111;
+  color:white;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.12);
+}
+
+#startBtn:hover,
+#yesBtn:hover{
+  transform:translateY(-4px) scale(1.05);
+}
+
+/* NO BUTTON */
+
+#noBtn{
+  background:white;
+  color:#111;
+
+  border:1px solid rgba(0,0,0,0.08);
+
+  position:relative;
 }
 
 /* SUCCESS */
@@ -310,6 +304,10 @@ h2{
   .description,
   .success-text{
     font-size:17px;
+  }
+
+  button{
+    width:100%;
   }
 
 }
